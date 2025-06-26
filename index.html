@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paurush Mishra | Football Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes pulse-slow {
+      0%,100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.05); opacity: 0.5; }
+    }
+
+    .animate-pulse-slow {
+      animation: pulse-slow 6s infinite ease-in-out;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s forwards;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body class="text-gray-900 relative">
+
+  <!-- 🌌 Background Video -->
+  <video autoplay muted loop class="fixed top-0 left-0 w-full h-full object-cover z-[-10]">
+    <source src="new.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 🌑 Optional dark overlay -->
+  <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-[-5]"></div>
+
+  <!-- Ronaldo GIF -->
+  <div style="position: fixed; bottom: 20px; right: 20px; width: 150px; z-index: 50;">
+    <div class="tenor-gif-embed" data-postid="5049704822301769510" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+      <a href="https://tenor.com/view/ronaldo-ronaldo-suiii-cr7-suii-g3-gif-5049704822301769510">Ronaldo Suiii GIF</a> from 
+      <a href="https://tenor.com/search/ronaldo-gifs">Tenor</a>
+    </div>
+  </div>
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 bg-[#1c3d16] text-white shadow-lg py-4 px-8 flex justify-between items-center z-40">
+    <h1 class="text-2xl font-bold text-[#fdb927]">Paurush Mishra</h1>
+    <ul class="flex gap-6">
+      <li><a href="#about" class="hover:text-[#fdb927]">About</a></li>
+      <li><a href="#projects" class="hover:text-[#fdb927]">Projects</a></li>
+      <li><a href="#skills" class="hover:text-[#fdb927]">Skills</a></li>
+      <li><a href="#contact" class="hover:text-[#fdb927]">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 bg-transparent">
+    <div class="md:w-1/2 flex justify-center mb-8 md:mb-0">
+      <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-[#fdb927] shadow-2xl">
+        <img src="paurush-profile.jpg" alt="Paurush Mishra" class="w-full h-full object-cover"/>
+        <div class="absolute inset-0 bg-black opacity-30 rounded-full"></div>
+      </div>
+    </div>
+    <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+     <h2 class="text-white text-4xl md:text-5xl font-bold fade-in" style="--delay:0.2s">
+  Hi, I’m Paurush Mishra
+</h2>
+<p class="text-white mt-4 text-lg md:text-xl fade-in" style="--delay:0.4s">
+  Software Engineer specializing in C++ & Python — I code with passion and play like Ronaldo. ⚽🔥
+</p>
+
+      </p>
+      <div class="mt-6 space-x-4 fade-in" style="--delay:0.6s">
+        <a href="#projects" class="bg-[#fdb927] text-white px-6 py-2 rounded shadow hover:bg-yellow-500 transition">View Projects</a>
+        <a href="#contact" class="border border-[#fdb927] text-[#fdb927] px-6 py-2 rounded hover:bg-[#fdb927] hover:text-white transition">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 px-6 text-center bg-transparent fade-in" style="--delay:0.3s">
+    <h3 class="text-3xl font-bold text-[#1c3d16] mb-4">About Me</h3>
+    <p class="max-w-3xl mx-auto text-white text-lg">
+      I’m a final-year BE student at Sir MVIT, Bengaluru (GPA: 8.23). I specialize in backend systems and problem-solving using C++, Python, and DSA.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 px-6 text-center bg-transparent fade-in" style="--delay:0.4s">
+    <h3 class="text-3xl font-bold text-[#1c3d16] mb-8">Projects</h3>
+    <div class="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+      <div class="group bg-white bg-opacity-90 p-6 rounded-xl shadow hover:shadow-lg transition transform hover:scale-105">
+        <h4 class="text-xl font-semibold mb-2 text-[#1c3d16]">AI Resume Analyzer</h4>
+        <p class="text-gray-700 mb-2">Python + NLP tool using Streamlit to match resumes with job descriptions.</p>
+        <a href="https://github.com/PAURUSH077/ai-nlp-resume_analyzer" class="text-[#1c3d16] hover:underline">GitHub →</a>
+      </div>
+      <div class="group bg-white bg-opacity-90 p-6 rounded-xl shadow hover:shadow-lg transition transform hover:scale-105">
+        <h4 class="text-xl font-semibold mb-2 text-[#1c3d16]">MyShell</h4>
+        <p class="text-gray-700 mb-2">Unix-style shell in C++ with interactive frontend via Python Tkinter.</p>
+        <a href="https://github.com/PAURUSH077/myshelll" class="text-[#1c3d16] hover:underline">GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-16 px-6 text-center bg-black bg-opacity-50 text-white fade-in" style="--delay:0.5s">
+    <h3 class="text-3xl font-bold mb-6">Skills & Tools</h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+      <div>Python</div><div>C++</div><div>Java</div>
+      <div>Streamlit, Pandas</div><div>SQL, MySQL</div><div>Git, VS Code</div>
+      <div>DSA – 120+ problems solved</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 px-6 text-center bg-black bg-opacity-50 text-white fade-in" style="--delay:0.6s">
+    <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
+    <p class="mb-4">📧 <a href="mailto:paurushrmishra@gmail.com" class="text-yellow-300 hover:underline">paurushrmishra@gmail.com</a></p>
+    <p class="mb-4">📞 <a href="tel:+918010890425" class="text-yellow-300 hover:underline">+91 80108 90425</a></p>
+    <p class="mb-4">💼 <a href="https://linkedin.com/in/paurush-mishra-m" class="text-yellow-300 hover:underline">LinkedIn</a></p>
+    <p class="mb-4">👨‍💻 <a href="https://github.com/PAURUSH077" class="text-yellow-300 hover:underline">GitHub</a></p>
+    <p>📊 <a href="https://leetcode.com/u/paurushmishra063/" class="text-yellow-300 hover:underline">LeetCode</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center bg-transparent text-sm text-white">
+    &copy; 2025 Paurush Mishra. All rights reserved.
+  </footer>
+
+</body>
+</html>
