@@ -26,4 +26,8 @@ This site showcases who I am, the projects I've built, and the skills I bring to
 3. Open `index.html` in any browser.
 
 ## 📂 Project Structure
-
+/project-folder
+├── index.html
+├── ronaldo.mp4
+├── paurush-profile.jpg
+└── README.md
