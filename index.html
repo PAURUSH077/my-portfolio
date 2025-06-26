@@ -78,6 +78,12 @@
       filter: brightness(1.2) blur(0.3px);
       transform: scale(1.05);
     }
+
+    .touched {
+      text-shadow: 0 0 8px rgba(255,255,255,0.8);
+      filter: brightness(1.2) blur(0.3px);
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body class="text-gray-900 relative">
@@ -94,19 +100,23 @@
   <!-- Glow Trail -->
   <div class="glow" id="cursor-glow"></div>
 
-  <!-- Ronaldo GIF -->
-  <div style="position: fixed; bottom: 20px; right: 20px; width: 150px; z-index: 50;">
-    <div class="tenor-gif-embed" data-postid="5049704822301769510" data-share-method="host" data-aspect-ratio="1" data-width="100%">
-      <a href="https://tenor.com/view/ronaldo-ronaldo-suiii-cr7-suii-g3-gif-5049704822301769510">Ronaldo Suiii GIF</a> from 
-      <a href="https://tenor.com/search/ronaldo-gifs">Tenor</a>
-    </div>
+<!-- Ronaldo MP4 Video with Grey-Black Gradient Border -->
+<div style="position: fixed; bottom: 20px; right: 20px; width: 150px; z-index: 50;">
+  <div class="p-[3px] rounded-lg bg-gradient-to-br from-gray-600 to-black shadow-lg">
+    <video autoplay muted loop playsinline class="w-full rounded-lg">
+      <source src="ronaldo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
-  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+</div>
+
+
+
 
   <!-- Navbar -->
-  <nav class="sticky top-0 bg-[#1c3d16] text-white shadow-lg py-4 px-8 flex justify-between items-center z-40">
+  <nav class="sticky top-0 bg-[#1c3d16] text-white shadow-lg py-4 px-6 flex justify-between items-center z-40">
     <h1 class="text-2xl font-bold text-[#fdb927]">Paurush Mishra</h1>
-    <ul class="flex gap-6">
+    <ul class="flex gap-4 text-sm md:text-base">
       <li><a href="#about" class="hover:text-[#fdb927]">About</a></li>
       <li><a href="#projects" class="hover:text-[#fdb927]">Projects</a></li>
       <li><a href="#skills" class="hover:text-[#fdb927]">Skills</a></li>
@@ -115,18 +125,18 @@
   </nav>
 
   <!-- Hero -->
-  <section class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 bg-transparent">
+  <section class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 text-white bg-transparent text-center md:text-left">
     <div class="md:w-1/2 flex justify-center mb-8 md:mb-0">
       <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-[#fdb927] shadow-2xl">
         <img src="paurush-profile.jpg" alt="Paurush Mishra" class="w-full h-full object-cover"/>
         <div class="absolute inset-0 bg-black opacity-30 rounded-full"></div>
       </div>
     </div>
-    <div class="md:w-1/2 md:pl-12 text-center md:text-left">
-      <h2 class="text-white text-4xl md:text-5xl font-bold fade-in" style="--delay:0.2s">
+    <div class="md:w-1/2 md:pl-12">
+      <h2 class="text-4xl md:text-5xl font-bold fade-in" style="--delay:0.2s">
         Hi, I’m Paurush Mishra
       </h2>
-      <p class="text-white mt-4 text-lg md:text-xl fade-in" style="--delay:0.4s">
+      <p class="mt-4 text-lg md:text-xl fade-in" style="--delay:0.4s">
         Software Engineer specializing in C++ & Python — I code with passion and play like Ronaldo. ⚽🔥
       </p>
       <div class="mt-6 space-x-4 fade-in" style="--delay:0.6s">
@@ -186,12 +196,13 @@
     &copy; 2025 Paurush Mishra. All rights reserved.
   </footer>
 
-  <!-- Glow & Ripple JS -->
+  <!-- JS for Glow, Ripple, and Touch Transitions -->
   <script>
     const glow = document.getElementById('cursor-glow');
     document.addEventListener('mousemove', (e) => {
       glow.style.transform = `translate(${e.clientX - 150}px, ${e.clientY - 150}px)`;
     });
+
     document.addEventListener('click', (e) => {
       const ripple = document.createElement('div');
       ripple.className = 'ripple';
@@ -200,7 +211,15 @@
       document.body.appendChild(ripple);
       setTimeout(() => ripple.remove(), 600);
     });
-  </script>
 
+    // Touch support
+    const interactiveElements = document.querySelectorAll("h1, h2, h3, h4, h5, h6, p, a, li, span, div");
+    interactiveElements.forEach(el => {
+      el.addEventListener("touchstart", () => {
+        el.classList.add("touched");
+        setTimeout(() => el.classList.remove("touched"), 300);
+      });
+    });
+  </script>
 </body>
 </html>
